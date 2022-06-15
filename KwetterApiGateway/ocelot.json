@@ -1,5 +1,6 @@
 {
   "Routes": [
+    //login
     {
       "DownstreamPathTemplate": "/api/authentication/login",
       "DownstreamScheme": "https",
@@ -14,6 +15,7 @@
         "POST"
       ]
     },
+    //verify token
     {
       "DownstreamPathTemplate": "/api/authentication/verify",
       "DownstreamScheme": "https",
@@ -28,6 +30,52 @@
         "GET"
       ]
     },
+    //create auth credentials
+    {
+      "DownstreamPathTemplate": "/api/authentication/create",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44335"
+        }
+      ],
+      "UpstreamPathTemplate": "/createlogin",
+      "UpsteamHttpMethod": [
+        "POST"
+      ]
+    },
+    //test
+    {
+      "DownstreamPathTemplate": "/api/authentication/test",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44335"
+        }
+      ],
+      "UpstreamPathTemplate": "/test",
+      "UpsteamHttpMethod": [
+        "POST"
+      ]
+    },
+    //delete authentication credentials
+    {
+      "DownstreamPathTemplate": "/api/authentication/delete",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44335"
+        }
+      ],
+      "UpstreamPathTemplate": "/deletelogin",
+      "UpsteamHttpMethod": [
+        "DELETE"
+      ]
+    },
+    //Get user data
     {
       "DownstreamPathTemplate": "/api/user/user",
       "DownstreamScheme": "https",
@@ -44,6 +92,252 @@
       "UpstreamPathTemplate": "/user",
       "UpsteamHttpMethod": [
         "GET"
+      ]
+    },
+    //Create new user
+    {
+      "DownstreamPathTemplate": "/api/user/create",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44308"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/createuser",
+      "UpsteamHttpMethod": [
+        "POST"
+      ]
+    },
+    //Delete user data
+    {
+      "DownstreamPathTemplate": "/api/user/delete",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44308"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/deleteuser",
+      "UpsteamHttpMethod": [
+        "DELETE"
+      ]
+    },
+    //Get singular post
+    {
+      "DownstreamPathTemplate": "/api/post/post/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44329"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/post/{id}",
+      "UpsteamHttpMethod": [
+        "GET"
+      ]
+    },
+    //Get all posts on kwetter
+    {
+      "DownstreamPathTemplate": "/api/post/posts",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44329"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/posts",
+      "UpsteamHttpMethod": [
+        "GET"
+      ]
+    },
+    //Get all posts made by a specific user
+    {
+      "DownstreamPathTemplate": "/api/post/postsbyuser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44329"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/postsbyuser",
+      "UpsteamHttpMethod": [
+        "GET"
+      ]
+    },
+    //Create post
+    {
+      "DownstreamPathTemplate": "/api/post/create",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44329"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/createpost",
+      "UpsteamHttpMethod": [
+        "POST"
+      ]
+    },
+    //Delete singular post
+    {
+      "DownstreamPathTemplate": "/api/post/delete",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44329"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/deletepost",
+      "UpsteamHttpMethod": [
+        "DELETE"
+      ]
+    },
+    //Delete all posts from a specific user
+    {
+      "DownstreamPathTemplate": "/api/post/deleteall",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44329"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/deleteallpostbyuser",
+      "UpsteamHttpMethod": [
+        "DELETE"
+      ]
+    },
+    //Get single comment
+    {
+      "DownstreamPathTemplate": "/api/comment",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44307"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/comment",
+      "UpsteamHttpMethod": [
+        "GET"
+      ]
+    },
+    //Get all comments for post
+    {
+      "DownstreamPathTemplate": "/api/comment/commentsbypost",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44307"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/commentsbypost",
+      "UpsteamHttpMethod": [
+        "GET"
+      ]
+    },
+    //create comment
+    {
+      "DownstreamPathTemplate": "/api/comment",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44307"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/createcomment",
+      "UpsteamHttpMethod": [
+        "POST"
+      ]
+    },
+    //delete single comment
+    {
+      "DownstreamPathTemplate": "/api/comment",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44307"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/deletecomment",
+      "UpsteamHttpMethod": [
+        "DELETE"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/comment/deleteallbyuser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44307"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/deleteallcommentsforuser",
+      "UpsteamHttpMethod": [
+        "DELETE"
       ]
     }
   ],

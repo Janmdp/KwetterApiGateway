@@ -38,6 +38,15 @@ namespace KwetterApiGateway
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "KwetterApiGateway", Version = "v1" });
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.WithOrigins("http://localhost:3000")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+
             services.AddOcelot(Configuration);
 
             services
@@ -61,6 +70,9 @@ namespace KwetterApiGateway
                         ValidateIssuerSigningKey = true
                     };
                 });
+
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +86,8 @@ namespace KwetterApiGateway
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 

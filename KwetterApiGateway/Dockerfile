@@ -4,7 +4,7 @@
 #For more information, please see https://aka.ms/containercompat
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
-WORKDIR /app
+WORKDIR /src
 EXPOSE 80
 EXPOSE 443
 

@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: janmdpkwetterapigateway 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: janmdpkwetterapigateway
+  template:
+    metadata:
+      labels:
+        app: janmdpkwetterapigateway 
+    spec:
+      containers:
+        - name: janmdpkwetterapigateway 
+          image: kwetterregister.azurecr.io/janmdpkwetterapigateway
+          ports:
+          - containerPort: 80

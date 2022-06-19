@@ -53,6 +53,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
+      name: default
       vmImage: $(vmImageName)
     environment: 'JanmdpKwetterApiGateway-2016.default'
     strategy:

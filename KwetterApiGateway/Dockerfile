@@ -5,8 +5,8 @@
 
 #FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 #WORKDIR /app
-#EXPOSE 80
-#EXPOSE 443
+#
+#ENV ASPNETCORE_URLS=http://+:5000
 #
 #FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 #WORKDIR /src
@@ -14,7 +14,7 @@
 #RUN dotnet restore "KwetterApiGateway/KwetterApiGateway.csproj"
 #COPY . .
 #WORKDIR "/src/KwetterApiGateway"
-#RUN dotnet build "KwetterApiGateway.csproj" -c Release -o /app/build
+##RUN dotnet build "KwetterApiGateway.csproj" -c Release -o /app/build
 #
 #FROM build AS publish
 #RUN dotnet publish "KwetterApiGateway.csproj" -c Release -o /app/publish
@@ -26,6 +26,8 @@
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
+
+ENV ASPNETCORE_URLS=http://+:5000
 
 COPY *.csproj ./
 RUN dotnet restore

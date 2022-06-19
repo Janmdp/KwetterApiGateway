@@ -21,6 +21,7 @@ namespace KwetterApiGateway
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://+:5000");
                     webBuilder.ConfigureAppConfiguration(config =>
                     config.AddJsonFile("ocelot.json"));
                 })

@@ -3,11 +3,11 @@
     //login
     {
       "DownstreamPathTemplate": "/api/authentication/login",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44335"
+          "Host": "host.docker.internal",
+          "Port": "5001"
         }
       ],
       "UpstreamPathTemplate": "/login",
@@ -18,11 +18,11 @@
     //verify token
     {
       "DownstreamPathTemplate": "/api/authentication/verify",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44335"
+          "Host": "host.docker.internal",
+          "Port": "5001"
         }
       ],
       "UpstreamPathTemplate": "/authentication",
@@ -33,11 +33,11 @@
     //create auth credentials
     {
       "DownstreamPathTemplate": "/api/authentication/create",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44335"
+          "Host": "host.docker.internal",
+          "Port": "5001"
         }
       ],
       "UpstreamPathTemplate": "/createlogin",
@@ -48,11 +48,11 @@
     //test
     {
       "DownstreamPathTemplate": "/api/authentication/test",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44335"
+          "Host": "host.docker.internal",
+          "Port": "5001"
         }
       ],
       "UpstreamPathTemplate": "/test",
@@ -63,11 +63,11 @@
     //delete authentication credentials
     {
       "DownstreamPathTemplate": "/api/authentication/delete",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44335"
+          "Host": "host.docker.internal",
+          "Port": "5001"
         }
       ],
       "UpstreamPathTemplate": "/deletelogin",
@@ -78,11 +78,11 @@
     //Get user data
     {
       "DownstreamPathTemplate": "/api/user/user",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44308"
+          "Host": "host.docker.internal",
+          "Port": "5002"
         }
       ],
       "AuthenticationOptions": {
@@ -97,11 +97,11 @@
     //Create new user
     {
       "DownstreamPathTemplate": "/api/user/create",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44308"
+          "Host": "host.docker.internal",
+          "Port": "5002"
         }
       ],
       "AuthenticationOptions": {
@@ -116,11 +116,11 @@
     //Delete user data
     {
       "DownstreamPathTemplate": "/api/user/delete",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44308"
+          "Host": "host.docker.internal",
+          "Port": "5002"
         }
       ],
       "AuthenticationOptions": {
@@ -135,11 +135,11 @@
     //Get singular post
     {
       "DownstreamPathTemplate": "/api/post/post/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44329"
+          "Host": "host.docker.internal",
+          "Port": "5003"
         }
       ],
       "AuthenticationOptions": {
@@ -154,11 +154,11 @@
     //Get all posts on kwetter
     {
       "DownstreamPathTemplate": "/api/post/posts",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44329"
+          "Host": "host.docker.internal",
+          "Port": "5003"
         }
       ],
       "AuthenticationOptions": {
@@ -173,11 +173,11 @@
     //Get all posts made by a specific user
     {
       "DownstreamPathTemplate": "/api/post/postsbyuser",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44329"
+          "Host": "host.docker.internal",
+          "Port": "5003"
         }
       ],
       "AuthenticationOptions": {
@@ -192,11 +192,11 @@
     //Create post
     {
       "DownstreamPathTemplate": "/api/post/create",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44329"
+          "Host": "host.docker.internal",
+          "Port": "5003"
         }
       ],
       "AuthenticationOptions": {
@@ -211,11 +211,11 @@
     //Delete singular post
     {
       "DownstreamPathTemplate": "/api/post/delete",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44329"
+          "Host": "host.docker.internal",
+          "Port": "5003"
         }
       ],
       "AuthenticationOptions": {
@@ -230,11 +230,11 @@
     //Delete all posts from a specific user
     {
       "DownstreamPathTemplate": "/api/post/deleteall",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44329"
+          "Host": "host.docker.internal",
+          "Port": "5003"
         }
       ],
       "AuthenticationOptions": {
@@ -249,11 +249,11 @@
     //Get single comment
     {
       "DownstreamPathTemplate": "/api/comment",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44307"
+          "Host": "host.docker.internal",
+          "Port": "5004"
         }
       ],
       "AuthenticationOptions": {
@@ -268,11 +268,11 @@
     //Get all comments for post
     {
       "DownstreamPathTemplate": "/api/comment/commentsbypost",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44307"
+          "Host": "host.docker.internal",
+          "Port": "5004"
         }
       ],
       "AuthenticationOptions": {
@@ -287,11 +287,11 @@
     //create comment
     {
       "DownstreamPathTemplate": "/api/comment",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44307"
+          "Host": "host.docker.internal",
+          "Port": "5004"
         }
       ],
       "AuthenticationOptions": {
@@ -306,11 +306,11 @@
     //delete single comment
     {
       "DownstreamPathTemplate": "/api/comment",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44307"
+          "Host": "host.docker.internal",
+          "Port": "5004"
         }
       ],
       "AuthenticationOptions": {
@@ -324,11 +324,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/comment/deleteallbyuser",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44307"
+          "Host": "host.docker.internal",
+          "Port": "5004"
         }
       ],
       "AuthenticationOptions": {
